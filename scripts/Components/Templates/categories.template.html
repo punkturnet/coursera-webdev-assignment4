@@ -1,5 +1,7 @@
-<ul>
-  <li ng-repeat="item in items">
-    <a href="" ui-sref="/categories/{{ item.shortName }}/items">{{ item.name }}</a>
+<h3>Please select a category</h3>
+<ul  class="list-group">
+  <li class="list-group-item" ng-repeat="item in catList.items">
+    <span class="badge">{{item.short_name}}</span>
+      <a href="" ui-sref="items({catId:item.short_name})">{{ item.name }}</a>
   </li>
 </ul>

@@ -7,8 +7,8 @@
   ItemsController.$inject = ['MenuDataService', 'items', '$stateParams'];
   function ItemsController(MenuDataService, items, $stateParams){
     var itemList = this;
-    itemList.items = items;
-    console.log(items);
+    itemList.category = items.category;
+    itemList.items = items.menu_items;
   }
 
 })();

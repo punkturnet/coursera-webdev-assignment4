@@ -8,7 +8,6 @@
   function CategoriesController(MenuDataService, items){
     var catList = this;
     catList.items = items;
-    console.log(items);
   }
 
 })();

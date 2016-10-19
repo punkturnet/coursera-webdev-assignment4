@@ -1,6 +1,9 @@
-<ol>
-  <li ng-repeat="item in foundItems">
-    {{ item.name }} - {{ item.short_name }} - {{item.description}}
-    <button ng-click="onRemove({index: $index});">Remove Item</button>
+<h2>{{$ctrl.category.name}}</h2>
+<p>{{$ctrl.category.special_instructions}}</p>
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in $ctrl.items">
+    <span class="badge">{{item.short_name}}</span>
+    <h3>{{ item.name }}</h3>
+    <p>{{item.description}}</p>
   </li>
-</ol>
+</ul>

@@ -22,21 +22,21 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Premade list page
   .state('categories', {
     url: '/categories',
-    templateUrl: 'scripts/components/templates/categories.template.html',
+    templateUrl: 'scripts/components/templates/main-categories.template.html',
     controller: 'CategoriesController as catList',
     resolve: {
       items: ['MenuDataService', function (MenuDataService) {
-        return MenuDataService.GetAllCategories;
+        return MenuDataService.GetAllCategories();
       }]
     }
   })
 
   .state('items', {
     url: '/categories/{catId}/items',
-    templateUrl: 'scripts/components/templates/items.template.html',
+    templateUrl: 'scripts/components/templates/main-items.template.html',
     controller: 'ItemsController as itemList',
     resolve: {
-      items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
+      items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
         return MenuDataService.GetItemsForCategory($stateParams.catId);
       }]
     }

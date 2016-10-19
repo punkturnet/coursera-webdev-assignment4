@@ -1,6 +1,5 @@
-<h3>Please select a category</h3>
-<ul  class="list-group">
-  <li class="list-group-item" ng-repeat="item in catList.items">
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in $ctrl.items">
     <span class="badge">{{item.short_name}}</span>
       <a href="" ui-sref="items({catId:item.short_name})">{{ item.name }}</a>
   </li>
